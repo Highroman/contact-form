@@ -30,7 +30,7 @@ To install the application, follow these steps:
 
 ## Usage
 
-To use the application, simply access the URL where it is deployed and fill out the contact form. To manage the messages, log in as an admin user and access the admin dashboard.
+To use the application, simply access the URL where it is deployed and fill out the contact form.
 
 ## Contributing
 
