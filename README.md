@@ -4,8 +4,8 @@ Ce projet est un formulaire de contact en ligne. Il permet à l'utilisateur de r
 Fonctionnalités
 Formulaire de contact en ligne avec validation de saisie côté serveur
 Envoi des données du formulaire à une adresse e-mail spécifiée
-Interface utilisateur simple et conviviale
 Technologies utilisées
+PHP 7.4.1
 Symfony 5.3 (PHP)
 Bootstrap 5 (CSS/JS)
 SwiftMailer (envoi d'e-mails)
