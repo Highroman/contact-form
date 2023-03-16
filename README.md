@@ -1,13 +1,37 @@
-﻿# contact-form
-Ce projet est un formulaire de contact en ligne. Il permet à l'utilisateur de remplir un formulaire de contact et de l'envoyer à l'adresse e-mail spécifiée.
+# Contact Form
 
-Fonctionnalités
-Formulaire de contact en ligne avec validation de saisie côté serveur
-Envoi des données du formulaire à une adresse e-mail spécifiée
-Technologies utilisées
-PHP 7.4.1
-Symfony 5.3 (PHP)
-Bootstrap 5 (CSS/JS)
-SwiftMailer (envoi d'e-mails)
-Déploiement
-Le projet est actuellement déployé sur Heroku à l'adresse suivante : https://contact-form-roman-bajine.herokuapp.com/fiche-contact
+This project is a simple contact form built with Symfony 5. It allows users to send a message to the website owner by filling out a form. The message is then stored in a MySQL database and can be viewed and managed by an admin user.
+
+## Features
+- Online contact form with server-side validation
+- Sending data from the form to a specified email address
+
+## Technologies used
+- PHP 7.4.1
+- Symfony 5.3 (PHP)
+- Bootstrap 5 (CSS/JS)
+- Mailer (sending emails)
+- Doctrine
+
+## Production
+
+The application is currently deployed on Heroku and can be accessed at https://contact-form-roman-bajine.herokuapp.com/fiche-contact.
+
+## Installation
+
+To install the application, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-username/contact-form.git`
+2. Install the dependencies: `composer install`
+3. Configure the database connection in `.env`
+4. Create the database: `php bin/console doctrine:database:create`
+5. Run the migrations: `php bin/console doctrine:migrations:migrate`
+6. Load the fixtures: `php bin/console doctrine:fixtures:load`
+
+## Usage
+
+To use the application, simply access the URL where it is deployed and fill out the contact form. To manage the messages, log in as an admin user and access the admin dashboard.
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute, please open a pull request or an issue.
