@@ -10,7 +10,17 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ContactRepository::class)
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={
+ *         "get"={"path"="/contacts"},
+ *         "post"={"path"="/contacts", "controller"=FicheContactController::class}
+ *     },
+ *     itemOperations={
+ *         "get"={"path"="/contacts/{id}"},
+ *         "put"={"path"="/contacts/{id}"},
+ *         "delete"={"path"="/contacts/{id}"}
+ *     }
+ * )
  */
 class Contact
 {

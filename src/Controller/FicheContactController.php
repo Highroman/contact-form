@@ -18,31 +18,10 @@ class FicheContactController extends AbstractController
     /**
      * @Route("/fiche-contact", name="fiche_contact", methods={"GET"})
      */
-    public function index(Request $request, MailerInterface $mailer, EntityManagerInterface $entityManager): Response
-    {
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($contact);
-            $entityManager->flush();
-
-            // Envoi du mail
-            $this->sendMail($contact, $mailer);
-
-            $this->addFlash('success', 'Votre message a bien été envoyé.');
-
-            return $this->redirectToRoute('fiche_contact');
-        }
-
-        return $this->render('fiche_contact/index.html.twig', [
-            'formContact' => $form->createView(),
-        ]);
-    }
 
     /**
-     * @Route("/api/contact/submit", name="api_contact_submit", methods={"POST"})
+     * @Route("/api/contacts", name="api_create_contact", methods={"POST"})
      */
     public function submitApi(Request $request, MailerInterface $mailer, EntityManagerInterface $entityManager): JsonResponse
     {

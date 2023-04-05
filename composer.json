@@ -10,7 +10,6 @@
         "api-platform/core": "^2.7",
         "doctrine/annotations": "^2.0",
         "doctrine/doctrine-bundle": "^2.8",
-        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.14",
         "nelmio/cors-bundle": "^2.3",
@@ -48,15 +47,16 @@
         "webonyx/graphql-php": "^15.2"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
         "symfony/css-selector": "5.4.*",
-        "symfony/maker-bundle": "^1.0",
+        "symfony/debug-bundle": "5.4.*",
+        "symfony/maker-bundle": "^1.48",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "5.4.*",
         "symfony/web-profiler-bundle": "5.4.*",
-        "symfony/web-server-bundle": "^4.4",
-        "symfony/debug-bundle": "5.4.*"
+        "symfony/web-server-bundle": "^4.4"
     },
     "config": {
         "allow-plugins": {
