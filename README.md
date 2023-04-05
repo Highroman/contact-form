@@ -21,7 +21,7 @@ The application is currently deployed on Heroku and can be accessed at https://c
 
 To install the application, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/contact-form.git`
+1. Clone the repository: `git clone https://github.com/highroman/contact-form.git`
 2. Install the dependencies: `composer install`
 3. Configure the database connection in `.env`
 4. Create the database: `php bin/console doctrine:database:create`
