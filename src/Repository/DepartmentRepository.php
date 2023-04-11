@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Departement;
+use App\Entity\Department;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Departement>
+ * @extends ServiceEntityRepository<Department>
  *
- * @method Departement|null find($id, $lockMode = null, $lockVersion = null)
- * @method Departement|null findOneBy(array $criteria, array $orderBy = null)
- * @method Departement[]    findAll()
- * @method Departement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Department|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Department|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Department[]    findAll()
+ * @method Department[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DepartementRepository extends ServiceEntityRepository
+class DepartmentRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Departement::class);
+        parent::__construct($registry, Department::class);
     }
 
-    public function add(Departement $entity, bool $flush = false): void
+    public function save(Department $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class DepartementRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Departement $entity, bool $flush = false): void
+    public function remove(Department $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class DepartementRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Departement[] Returns an array of Departement objects
+//     * @return Department[] Returns an array of Department objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class DepartementRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Departement
+//    public function findOneBySomeField($value): ?Department
 //    {
 //        return $this->createQueryBuilder('d')
 //            ->andWhere('d.exampleField = :val')

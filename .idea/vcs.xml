@@ -3,8 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contact_form_rest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/git" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/zsh" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/zsh-syntax-highlighting" vcs="Git" />
   </component>
 </project>

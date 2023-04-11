@@ -2,100 +2,69 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ContactRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ContactRepository::class)
- * @ApiResource(
- *     collectionOperations={
- *         "get"={"path"="/contacts"},
- *         "post"={"path"="/contacts", "controller"=FicheContactController::class}
- *     },
- *     itemOperations={
- *         "get"={"path"="/contacts/{id}"},
- *         "put"={"path"="/contacts/{id}"},
- *         "delete"={"path"="/contacts/{id}"}
- *     }
- * )
- */
+#[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $lastname;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $firstName = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $firstname;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lastName = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $mail;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $email = null;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $message;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $message = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Departement::class, inversedBy="contacts")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $departement;
-
-    // getters and setters
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    private ?Department $department = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getLastname(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->lastname;
+        return $this->firstName;
     }
 
-    public function setLastname(string $lastname): self
+    public function setFirstName(?string $firstName): self
     {
-        $this->lastname = $lastname;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
-    public function getFirstname(): ?string
+    public function getLastName(): ?string
     {
-        return $this->firstname;
+        return $this->lastName;
     }
 
-    public function setFirstname(string $firstname): self
+    public function setLastName(?string $lastName): self
     {
-        $this->firstname = $firstname;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(string $mail): self
+    public function setEmail(?string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }
@@ -105,22 +74,22 @@ class Contact
         return $this->message;
     }
 
-    public function setMessage(string $message): self
+    public function setMessage(?string $message): self
     {
         $this->message = $message;
 
         return $this;
     }
 
-    public function getDepartement(): ?Departement
+    public function getDepartment(): ?Department
     {
-        return $this->departement;
+        return $this->department;
     }
 
-    public function setDepartement(?Departement $departement): self
+    public function setDepartment(?Department $department): self
     {
-        $this->departement = $departement;
+        $this->department = $department;
 
         return $this;
     }
-   }
+}

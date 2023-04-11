@@ -1,0 +1,26 @@
+# config/routes/api.yaml
+
+api_contacts_list:
+  path: /api/contacts
+  controller: App\Controller\Api\ApiContactController::getContacts
+  methods: [GET]
+
+api_contacts_get:
+  path: /api/contacts/{id}
+  controller: App\Controller\Api\ApiContactController::getContact
+  methods: [GET]
+
+api_contacts_create:
+  path: /api/contacts
+  controller: App\Controller\Api\ApiContactController::createContact
+  methods: [POST]
+
+api_contacts_update:
+  path: /api/contacts/{id}
+  controller: App\Controller\Api\ApiContactController::updateContact
+  methods: [PUT]
+
+api_contacts_delete:
+  path: /api/contacts/{id}
+  controller: App\Controller\Api\ApiContactController::deleteContact
+  methods: [DELETE]
